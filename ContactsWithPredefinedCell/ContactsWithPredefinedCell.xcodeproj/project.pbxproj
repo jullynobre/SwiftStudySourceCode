@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BE0D4746208F7D800049D19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D4745208F7D800049D19E /* AppDelegate.swift */; };
-		BE0D4748208F7D800049D19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D4747208F7D800049D19E /* ViewController.swift */; };
 		BE0D474B208F7D800049D19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0D4749208F7D800049D19E /* Main.storyboard */; };
 		BE0D474D208F7D800049D19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0D474C208F7D800049D19E /* Assets.xcassets */; };
 		BE0D4750208F7D800049D19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0D474E208F7D800049D19E /* LaunchScreen.storyboard */; };
 		BE0D475B208F7D800049D19E /* ContactsWithPredefinedCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D475A208F7D800049D19E /* ContactsWithPredefinedCellTests.swift */; };
 		BE0D4766208F7D800049D19E /* ContactsWithPredefinedCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D4765208F7D800049D19E /* ContactsWithPredefinedCellUITests.swift */; };
+		BE0D4774208F7E300049D19E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D4773208F7E300049D19E /* TableViewController.swift */; };
+		BE0D4778208FBE780049D19E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D4777208FBE780049D19E /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		BE0D4742208F7D800049D19E /* ContactsWithPredefinedCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsWithPredefinedCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0D4745208F7D800049D19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE0D4747208F7D800049D19E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE0D474A208F7D800049D19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE0D474C208F7D800049D19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE0D474F208F7D800049D19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		BE0D4761208F7D800049D19E /* ContactsWithPredefinedCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsWithPredefinedCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0D4765208F7D800049D19E /* ContactsWithPredefinedCellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsWithPredefinedCellUITests.swift; sourceTree = "<group>"; };
 		BE0D4767208F7D800049D19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE0D4773208F7E300049D19E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		BE0D4777208FBE780049D19E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				BE0D4745208F7D800049D19E /* AppDelegate.swift */,
-				BE0D4747208F7D800049D19E /* ViewController.swift */,
 				BE0D4749208F7D800049D19E /* Main.storyboard */,
 				BE0D474C208F7D800049D19E /* Assets.xcassets */,
 				BE0D474E208F7D800049D19E /* LaunchScreen.storyboard */,
 				BE0D4751208F7D800049D19E /* Info.plist */,
+				BE0D4773208F7E300049D19E /* TableViewController.swift */,
+				BE0D4777208FBE780049D19E /* Contact.swift */,
 			);
 			path = ContactsWithPredefinedCell;
 			sourceTree = "<group>";
@@ -259,8 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0D4748208F7D800049D19E /* ViewController.swift in Sources */,
+				BE0D4778208FBE780049D19E /* Contact.swift in Sources */,
 				BE0D4746208F7D800049D19E /* AppDelegate.swift in Sources */,
+				BE0D4774208F7E300049D19E /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

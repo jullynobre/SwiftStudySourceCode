@@ -10,26 +10,49 @@ import UIKit
 
 class ViewController1: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dogs: [Pet] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        dogs = [Pet.init(withName: "Dog Estiloso", shortDescription: "Doguinho com muito estilo", image: #imageLiteral(resourceName: "dog1")),
+                Pet.init(withName: "Presa canário", shortDescription: "Doguinho fofo demais", image: #imageLiteral(resourceName: "dog2")),
+                Pet.init(withName: "Mimi", shortDescription: "Mimi, não toque nele", image: #imageLiteral(resourceName: "dog3")),
+                Pet.init(withName: "Daniel", shortDescription: "hehehehe gato zuero", image: #imageLiteral(resourceName: "dog4")),
+                Pet.init(withName: "Lobiho", shortDescription: "Doguinho do Celbit", image: #imageLiteral(resourceName: "dog5"))]
+        
+        let nib = UINib.init(nibName: "PetTableViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "PetCell")
+        
+        tableView.dataSource = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ViewController1: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dogs.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as! PetTableViewCell
+        
+        let dog = self.dogs[indexPath.row]
+        
+        cell.petName.text = dog.name
+        cell.petShortDescription.text = dog.shortDescription
+        cell.petImage.image = dog.image
+        
+        return cell
+    }
 }

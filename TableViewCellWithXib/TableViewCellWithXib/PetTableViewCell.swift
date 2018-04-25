@@ -10,6 +10,10 @@ import UIKit
 
 class PetTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var petImage: UIImageView!
+    @IBOutlet weak var petName: UILabel!
+    @IBOutlet weak var petShortDescription: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

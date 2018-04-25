@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import UIKit
+
+class Pet{
+    var name: String
+    var shortDescription: String
+    var image: UIImage = #imageLiteral(resourceName: "placeholder")
+    
+    init(withName name: String, shortDescription: String, image: UIImage?) {
+        self.name = name
+        self.shortDescription = shortDescription
+        
+        if let i = image{
+            self.image = i
+        }
+    }
+    
+}

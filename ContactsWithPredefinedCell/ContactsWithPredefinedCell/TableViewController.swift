@@ -34,6 +34,7 @@ class TableViewController: UITableViewController {
                     Contact.init(name: "Madalena", phone: "998987665"),
                     Contact.init(name: "Sharon", phone: "998987665")]
         
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,10 +62,19 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = contact.name
         cell.detailTextLabel?.text = contact.phone
         cell.imageView?.image = contact.image
-    
+        cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
+        
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let contact = contacts[indexPath.row]
+        
+        let alert = UIAlertController(title: contact.name, message: contact.phone, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

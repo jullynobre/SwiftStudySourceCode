@@ -27,6 +27,7 @@ class ViewController1: UIViewController {
         self.tableView.register(nib, forCellReuseIdentifier: "PetCell")
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,3 +57,27 @@ extension ViewController1: UITableViewDataSource{
         return cell
     }
 }
+
+extension ViewController1: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let title = NSLocalizedString("Delete Doguinho", comment: "Delete Doguinho")
+        
+        let action = UIContextualAction(style: .normal, title: title,
+                                        handler: { (action, view, completionHandler) in
+                                            print("Delete: \(indexPath.row)")
+                                            completionHandler(true)
+        })
+        
+        action.image = #imageLiteral(resourceName: "trashIcon")
+        action.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+        
+        
+        return configuration
+    }    
+}
+
+
+
+

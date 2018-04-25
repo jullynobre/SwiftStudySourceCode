@@ -61,7 +61,7 @@ extension ViewController1: UITableViewDataSource{
 extension ViewController1: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let title = NSLocalizedString("Delete Doguinho", comment: "Delete Doguinho")
+        let title = NSLocalizedString("Delete \nDoguinho", comment: "Delete \nDoguinho")
         
         let action = UIContextualAction(style: .normal, title: title,
                                         handler: { (action, view, completionHandler) in

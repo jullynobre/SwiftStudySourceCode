@@ -19,32 +19,57 @@
                 <rect key="frame" x="0.0" y="0.0" width="346" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF9-fl-iwz" userLabel="Evento">
-                        <rect key="frame" x="23" y="11" width="90" height="29"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUa-0W-e4C">
-                        <rect key="frame" x="23" y="38" width="36" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iF-ym-sfq">
-                        <rect key="frame" x="23" y="58" width="41" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etg-Xs-agS">
-                        <rect key="frame" x="0.0" y="0.0" width="346" height="90"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPv-yh-74I">
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="89.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etg-Xs-agS">
+                                <rect key="frame" x="0.0" y="0.0" width="346" height="89.5"/>
+                            </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dV-Ix-XM2">
+                                <rect key="frame" x="0.0" y="0.0" width="346" height="89.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF9-fl-iwz" userLabel="Evento">
+                                <rect key="frame" x="15" y="14" width="305" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUa-0W-e4C">
+                                <rect key="frame" x="15" y="40" width="305" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Local" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iF-ym-sfq">
+                                <rect key="frame" x="15" y="59" width="305" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="etg-Xs-agS" firstAttribute="top" secondItem="RPv-yh-74I" secondAttribute="top" id="5Du-mu-exB"/>
+                            <constraint firstAttribute="bottom" secondItem="etg-Xs-agS" secondAttribute="bottom" id="Bfi-HV-asH"/>
+                            <constraint firstItem="5dV-Ix-XM2" firstAttribute="leading" secondItem="RPv-yh-74I" secondAttribute="leading" id="PTN-ET-VVW"/>
+                            <constraint firstItem="etg-Xs-agS" firstAttribute="leading" secondItem="RPv-yh-74I" secondAttribute="leading" id="TNC-UL-wAJ"/>
+                            <constraint firstAttribute="bottom" secondItem="5dV-Ix-XM2" secondAttribute="bottom" id="XQY-Pw-FIV"/>
+                            <constraint firstItem="5dV-Ix-XM2" firstAttribute="top" secondItem="RPv-yh-74I" secondAttribute="top" id="YtS-h4-4Tf"/>
+                            <constraint firstAttribute="trailing" secondItem="etg-Xs-agS" secondAttribute="trailing" id="zDj-z6-lEC"/>
+                            <constraint firstAttribute="trailing" secondItem="5dV-Ix-XM2" secondAttribute="trailing" id="zPV-Ux-YW2"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="RPv-yh-74I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9ZU-Lr-PUE"/>
+                    <constraint firstItem="RPv-yh-74I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TPy-pg-UBS"/>
+                    <constraint firstAttribute="trailing" secondItem="RPv-yh-74I" secondAttribute="trailing" id="UqE-3l-4o5"/>
+                    <constraint firstAttribute="bottom" secondItem="RPv-yh-74I" secondAttribute="bottom" id="f1G-sY-hwM"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

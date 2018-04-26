@@ -17,10 +17,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         df.dateFormat = "dd/MM/yyyy"
         events = [
-            Event.init(withName: "Prova de Inglês", date: df.date(from: "01/05/2018")!, place: "UFC Pici", image: #imageLiteral(resourceName: "placeholder")),
-            Event.init(withName: "Rodízio de Pizza", date: df.date(from: "12/05/2018")!, place: "Le Gusto, Jovita", image: #imageLiteral(resourceName: "placeholder")),
-            Event(withName: "Encontrinho", date: df.date(from: "02/06/2018")!, place: "Praça do Amor", image: #imageLiteral(resourceName: "placeholder")),
-            Event(withName: "Treino de vôlei", date: df.date(from: "09/05/2018")!, place: "Aterro da Praia de Iracema", image: #imageLiteral(resourceName: "placeholder"))]
+            Event.init(withName: "Prova de Inglês", date: df.date(from: "01/05/2018")!, place: "UFC Pici", image: #imageLiteral(resourceName: "campus_do_pici")),
+            Event.init(withName: "Rodízio de Pizza", date: df.date(from: "12/05/2018")!, place: "Le Gusto, Jovita", image: #imageLiteral(resourceName: "pizzaria")),
+            Event(withName: "Encontrinho", date: df.date(from: "02/06/2018")!, place: "Praça do Amor", image: #imageLiteral(resourceName: "praca")),
+            Event(withName: "Treino de vôlei", date: df.date(from: "09/05/2018")!, place: "Aterro da Praia de Iracema", image: #imageLiteral(resourceName: "aterro"))]
         
         let nib = UINib(nibName: "EventTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "EventCell")
@@ -44,7 +44,7 @@ extension ViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventTableViewCell
         let event = self.events[indexPath.row]
         cell.name.text = event.name
-        cell.date.text = event.date.description
+        cell.date.text = df.string(from: event.date)
         cell.place.text = event.place
         cell.img.image = event.image
         return cell

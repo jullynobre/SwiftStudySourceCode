@@ -1,0 +1,27 @@
+//
+//  Contact.swift
+//  ContactsTableViewSolution
+//
+//  Created by Ada 2018 on 26/04/18.
+//  Copyright © 2018 Academy 2018. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class Contact{
+    
+    var name: String
+    var phone: String
+    var photo: UIImage = #imageLiteral(resourceName: "contact-avatar")
+    
+    init(WithName name: String, phone: String, photo: UIImage?) {
+        self.name = name
+        self.phone = phone
+        
+        if let photoUnwrapped = photo{
+            self.photo = photoUnwrapped
+        }
+    }
+    
+}

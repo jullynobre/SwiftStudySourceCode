@@ -10,10 +10,18 @@ import UIKit
 
 class AddContactViewController: UIViewController {
 
+    @IBOutlet weak var contactPhoto: UIImageView!
+    let pickerController = UIImagePickerController()
+    
+    @IBOutlet weak var contactName: UITextField!
+    @IBOutlet weak var contactPhone: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        pickerController.delegate = self
+        
+        self.contactPhoto.layer.masksToBounds = true
+        self.contactPhoto.layer.cornerRadius = 75
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +29,36 @@ class AddContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didClickChooseImageButton(_ sender: Any) {
+        pickerController.allowsEditing = false
+        pickerController.sourceType = .photoLibrary
+        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(pickerController, animated: true, completion: nil)
     }
-    */
+    @IBAction func DidTapCancelButton(_ sender: Any) {
+        let alertDelete = UIAlertController(title: "Cancel Operation", message: "Do you really want to cancel this new contact?", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Yes", style: .destructive, handler:
+        { (action) -> Void in
+            self.dismiss(animated: true, completion: nil)
+        })
+        let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        alertDelete.addAction(deleteAction)
+        alertDelete.addAction(cancelAction)
+        self.present(alertDelete, animated: true, completion: nil)
+    }
+}
 
+extension AddContactViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let choosedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.contactPhoto.contentMode = .scaleAspectFill
+        self.contactPhoto.image = choosedImage
+        
+        dismiss(animated: true, completion:  nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

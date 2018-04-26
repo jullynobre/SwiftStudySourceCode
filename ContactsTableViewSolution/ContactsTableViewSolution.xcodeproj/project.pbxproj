@@ -15,7 +15,6 @@
 		BEDE8AF62091F1A300897FFE /* ContactsTableViewSolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8AF52091F1A300897FFE /* ContactsTableViewSolutionTests.swift */; };
 		BEDE8B012091F1A300897FFE /* ContactsTableViewSolutionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B002091F1A300897FFE /* ContactsTableViewSolutionUITests.swift */; };
 		BEDE8B0F2091F21300897FFE /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B0E2091F21300897FFE /* AddContactViewController.swift */; };
-		BEDE8B112091F25300897FFE /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B102091F25300897FFE /* ContactViewController.swift */; };
 		BEDE8B142091F38400897FFE /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B122091F38400897FFE /* ContactTableViewCell.swift */; };
 		BEDE8B152091F38400897FFE /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDE8B132091F38400897FFE /* ContactTableViewCell.xib */; };
 		BEDE8B1A2091F3C300897FFE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B192091F3C300897FFE /* Contact.swift */; };
@@ -53,7 +52,6 @@
 		BEDE8B002091F1A300897FFE /* ContactsTableViewSolutionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewSolutionUITests.swift; sourceTree = "<group>"; };
 		BEDE8B022091F1A300897FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEDE8B0E2091F21300897FFE /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
-		BEDE8B102091F25300897FFE /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		BEDE8B122091F38400897FFE /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		BEDE8B132091F38400897FFE /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		BEDE8B192091F3C300897FFE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			children = (
 				BEDE8AE22091F1A300897FFE /* ViewController.swift */,
 				BEDE8B0E2091F21300897FFE /* AddContactViewController.swift */,
-				BEDE8B102091F25300897FFE /* ContactViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,7 +299,6 @@
 				BEDE8B1A2091F3C300897FFE /* Contact.swift in Sources */,
 				BEDE8B0F2091F21300897FFE /* AddContactViewController.swift in Sources */,
 				BEDE8B142091F38400897FFE /* ContactTableViewCell.swift in Sources */,
-				BEDE8B112091F25300897FFE /* ContactViewController.swift in Sources */,
 				BEDE8AE32091F1A300897FFE /* ViewController.swift in Sources */,
 				BEDE8AE12091F1A300897FFE /* AppDelegate.swift in Sources */,
 			);

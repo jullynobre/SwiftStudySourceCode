@@ -22,6 +22,7 @@ class AddContactViewController: UIViewController {
         
         self.contactPhoto.layer.masksToBounds = true
         self.contactPhoto.layer.cornerRadius = 75
+        self.contactPhoto.image = #imageLiteral(resourceName: "contact-avatar")
     }
 
     override func didReceiveMemoryWarning() {

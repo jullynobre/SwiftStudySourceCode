@@ -26,7 +26,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="fZ1-EC-NPR">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rOV-j4-uQp">
                             <connections>
-                                <segue destination="g4O-GG-lfC" kind="presentation" id="NaJ-BO-gG1"/>
+                                <segue destination="g4O-GG-lfC" kind="presentation" identifier="addNewContact" id="NaJ-BO-gG1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,7 +54,11 @@
                                                 <action selector="DidTapCancelButton:" destination="g4O-GG-lfC" id="S9r-l5-6Dc"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Jdw-Ic-HTY"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Jdw-Ic-HTY">
+                                            <connections>
+                                                <action selector="didClickDoneButton:" destination="g4O-GG-lfC" id="sTs-0z-MoB"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -94,16 +98,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeP-f4-fNq">
-                                <rect key="frame" x="138" y="153" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose Image">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="didClickChooseImageButton:" destination="g4O-GG-lfC" eventType="touchUpInside" id="ru7-9E-vb9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="i8j-qY-9qd"/>

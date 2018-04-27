@@ -18,6 +18,7 @@
 		BEDE8B152091F38400897FFE /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDE8B132091F38400897FFE /* ContactTableViewCell.xib */; };
 		BEDE8B1A2091F3C300897FFE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B192091F3C300897FFE /* Contact.swift */; };
 		BEDE8B1C209218CB00897FFE /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B1B209218CB00897FFE /* ContactsTableViewController.swift */; };
+		BEDE8B1F20934D2100897FFE /* contactProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE8B1E20934D2100897FFE /* contactProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		BEDE8B132091F38400897FFE /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		BEDE8B192091F3C300897FFE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BEDE8B1B209218CB00897FFE /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		BEDE8B1E20934D2100897FFE /* contactProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		BEDE8ADF2091F1A300897FFE /* ContactsTableViewSolution */ = {
 			isa = PBXGroup;
 			children = (
+				BEDE8B1D20934CF400897FFE /* Protocols */,
 				BEDE8B182091F3AC00897FFE /* Models */,
 				BEDE8B172091F39B00897FFE /* ContactCell */,
 				BEDE8B162091F38A00897FFE /* Controllers */,
@@ -159,6 +162,14 @@
 				BEDE8B192091F3C300897FFE /* Contact.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BEDE8B1D20934CF400897FFE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BEDE8B1E20934D2100897FFE /* contactProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			files = (
 				BEDE8B1A2091F3C300897FFE /* Contact.swift in Sources */,
 				BEDE8B0F2091F21300897FFE /* AddContactViewController.swift in Sources */,
+				BEDE8B1F20934D2100897FFE /* contactProtocol.swift in Sources */,
 				BEDE8B1C209218CB00897FFE /* ContactsTableViewController.swift in Sources */,
 				BEDE8B142091F38400897FFE /* ContactTableViewCell.swift in Sources */,
 				BEDE8AE12091F1A300897FFE /* AppDelegate.swift in Sources */,

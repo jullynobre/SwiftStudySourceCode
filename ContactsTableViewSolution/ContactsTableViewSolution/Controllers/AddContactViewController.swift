@@ -16,6 +16,8 @@ class AddContactViewController: UIViewController {
     @IBOutlet weak var contactName: UITextField!
     @IBOutlet weak var contactPhone: UITextField!
     
+    var del : contactProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerController.delegate = self
@@ -23,11 +25,50 @@ class AddContactViewController: UIViewController {
         self.contactPhoto.layer.masksToBounds = true
         self.contactPhoto.layer.cornerRadius = 75
         self.contactPhoto.image = #imageLiteral(resourceName: "contact-avatar")
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddContactViewController.imageTapped))
+        self.contactPhoto.addGestureRecognizer(tapGesture)
+        self.contactPhoto.isUserInteractionEnabled = true
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func imageTapped(){
+        pickerController.allowsEditing = false
+        pickerController.sourceType = .photoLibrary
+        pickerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(pickerController, animated: true, completion: nil)
+    
+    }
+    @IBAction func didClickDoneButton(_ sender: Any) {
+        guard let name = contactName.text else {
+            fillTextFields()
+            return
+        }
+        guard let phone = contactPhone.text else {
+            fillTextFields()
+            return
+        }
+        guard let photo = contactPhoto.image else {
+            fillTextFields()
+            return
+        }
+        
+        let newContact = Contact(WithName: name, phone: phone, photo: photo)
+        del?.addContact(newContact)
+        self.dismiss(animated: true, completion: nil)
+    }
+ 
+    
+    
+    func fillTextFields() {
+        let alertFill = UIAlertController(title: "Error", message: "Fill all the textfields to save the new contact.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertFill.addAction(cancelAction)
+        self.present(alertFill, animated: true, completion: nil)
     }
     
     @IBAction func didClickChooseImageButton(_ sender: Any) {

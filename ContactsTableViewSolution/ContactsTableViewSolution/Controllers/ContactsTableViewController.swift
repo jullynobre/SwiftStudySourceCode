@@ -10,15 +10,14 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
 
-    var contacts: [Contact] = []
+    var contacts =
+        [Contact.init(WithName: "Débora Moura", phone: "998768976", photo: nil),
+         Contact.init(WithName: "Daniel Alves", phone: "762398238", photo: nil),
+         Contact.init(WithName: "Barbosa Silva", phone: "087654356", photo: nil)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        contacts = [Contact.init(WithName: "Débora Moura", phone: "998768976", photo: nil),
-                    Contact.init(WithName: "Daniel Alves", phone: "762398238", photo: nil),
-                    Contact.init(WithName: "Barbosa Silva", phone: "087654356", photo: nil)]
-        
         let nib = UINib.init(nibName: "ContactTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "ContactCell")
         
@@ -45,7 +44,6 @@ class ContactsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ContactTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell)
-        
         
         let contact = contacts[indexPath.row]
         
@@ -105,5 +103,21 @@ class ContactsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is AddContactViewController {
+            let vc = segue.destination as? AddContactViewController
+            vc?.del  = self
+        }
+    }
 
+}
+
+extension ContactsTableViewController: contactProtocol {
+    func addContact(_ contact: Contact) {
+        contacts.append(contact)
+        self.tableView.reloadData()
+    }
+    
+    
 }

@@ -1,15 +1,15 @@
 //
-//  Contact.swift
+//  ContactMO.swift
 //  ContactsTableViewSolution
 //
-//  Created by Ada 2018 on 26/04/18.
+//  Created by Ada 2018 on 27/04/18.
 //  Copyright © 2018 Academy 2018. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import CoreData
 
-class Contact{
+class Contact {
     
     var name: String
     var phone: String
@@ -23,5 +23,4 @@ class Contact{
             self.photo = photoUnwrapped
         }
     }
-    
 }

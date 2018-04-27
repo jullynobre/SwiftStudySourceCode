@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactsTableViewController: UITableViewController {
 
-    var contacts =
-        [Contact.init(WithName: "Débora Moura", phone: "998768976", photo: nil),
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var contacts: [Contact] = []
+        /*[Contact.init(WithName: "Débora Moura", phone: "998768976", photo: nil),
          Contact.init(WithName: "Daniel Alves", phone: "762398238", photo: nil),
          Contact.init(WithName: "Barbosa Silva", phone: "087654356", photo: nil)]
+         */
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +55,7 @@ class ContactsTableViewController: UITableViewController {
         
         let contact = contacts[indexPath.row]
         
-        cell.contactImage.image = contact.photo
+        cell.contactImage.image = #imageLiteral(resourceName: "contact-avatar")
         cell.contactName.text = contact.name
         cell.contactPhone.text = contact.phone
         
@@ -110,6 +118,22 @@ class ContactsTableViewController: UITableViewController {
             vc?.del  = self
         }
     }
+    
+    func getData() {
+        self.contacts = []
+        
+        let contactsFetch = NSFetchRequest<NSManagedObject>(entityName: "ContactEntity")
+        do {
+            let requestResult = try context.fetch(contactsFetch)
+            
+            for result in requestResult{
+                let contact = Contact.init(WithName: result.value(forKey: "name") as! String, phone: result.value(forKey: "phone") as! String, photo: nil)
+                contacts.append(contact)
+            }
+        } catch {
+            print("Fetching Failed")
+        }
+    }
 
 }
 
@@ -118,6 +142,4 @@ extension ContactsTableViewController: contactProtocol {
         contacts.append(contact)
         self.tableView.reloadData()
     }
-    
-    
 }

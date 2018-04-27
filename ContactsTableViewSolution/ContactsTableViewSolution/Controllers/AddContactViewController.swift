@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddContactViewController: UIViewController {
 
@@ -52,13 +53,29 @@ class AddContactViewController: UIViewController {
             fillTextFields()
             return
         }
-        guard let photo = contactPhoto.image else {
-            fillTextFields()
-            return
-        }
+        //guard let photo = contactPhoto.image else {
+        //    fillTextFields()
+        //    return
+        //}
         
-        let newContact = Contact(WithName: name, phone: phone, photo: photo)
-        del?.addContact(newContact)
+        //let newContact = Contact(WithName: name, phone: phone, photo: photo)
+        //del?.addContact(newContact)
+        //self.dismiss(animated: true, completion: nil)
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let userEntity = NSEntityDescription.entity(forEntityName: "ContactEntity", in: context)!
+        let contact = NSManagedObject(entity: userEntity, insertInto: context)
+        
+        contact.setValue(name, forKey: "name")
+        contact.setValue(phone, forKey: "phone")
+        
+        //contact.name = name
+        //contact.phone = phone
+        //contact.photo = photo
+        
+        // Save the data to coredata
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         self.dismiss(animated: true, completion: nil)
     }
  

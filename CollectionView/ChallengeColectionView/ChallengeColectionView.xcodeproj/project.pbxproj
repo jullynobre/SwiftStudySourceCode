@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		BEEADDC920A0778200B655A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEADDC820A0778200B655A8 /* AppDelegate.swift */; };
-		BEEADDCB20A0778200B655A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEADDCA20A0778200B655A8 /* ViewController.swift */; };
 		BEEADDCE20A0778200B655A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEEADDCC20A0778200B655A8 /* Main.storyboard */; };
 		BEEADDD020A0778200B655A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEEADDCF20A0778200B655A8 /* Assets.xcassets */; };
 		BEEADDD320A0778200B655A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEEADDD120A0778200B655A8 /* LaunchScreen.storyboard */; };
+		BEEADDDB20A0784700B655A8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEADDDA20A0784700B655A8 /* CollectionViewController.swift */; };
+		BEEADDDD20A078A400B655A8 /* CollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEADDDC20A078A400B655A8 /* CollectionItem.swift */; };
+		BEEADDE320A0795800B655A8 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEADDE120A0795800B655A8 /* ItemCollectionViewCell.swift */; };
+		BEEADDE420A0795800B655A8 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEADDE220A0795800B655A8 /* ItemCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEEADDC520A0778200B655A8 /* ChallengeColectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeColectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEADDC820A0778200B655A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEEADDCA20A0778200B655A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEEADDCD20A0778200B655A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEEADDCF20A0778200B655A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEEADDD220A0778200B655A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEEADDD420A0778200B655A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEEADDDA20A0784700B655A8 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		BEEADDDC20A078A400B655A8 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
+		BEEADDE120A0795800B655A8 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		BEEADDE220A0795800B655A8 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		BEEADDC720A0778200B655A8 /* ChallengeColectionView */ = {
 			isa = PBXGroup;
 			children = (
+				BEEADDE020A0792300B655A8 /* Controllers */,
+				BEEADDDF20A0791F00B655A8 /* Models */,
+				BEEADDDE20A0791900B655A8 /* Views */,
 				BEEADDC820A0778200B655A8 /* AppDelegate.swift */,
-				BEEADDCA20A0778200B655A8 /* ViewController.swift */,
 				BEEADDCC20A0778200B655A8 /* Main.storyboard */,
 				BEEADDCF20A0778200B655A8 /* Assets.xcassets */,
 				BEEADDD120A0778200B655A8 /* LaunchScreen.storyboard */,
 				BEEADDD420A0778200B655A8 /* Info.plist */,
 			);
 			path = ChallengeColectionView;
+			sourceTree = "<group>";
+		};
+		BEEADDDE20A0791900B655A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEEADDE120A0795800B655A8 /* ItemCollectionViewCell.swift */,
+				BEEADDE220A0795800B655A8 /* ItemCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEEADDDF20A0791F00B655A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEEADDDC20A078A400B655A8 /* CollectionItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEEADDE020A0792300B655A8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEEADDDA20A0784700B655A8 /* CollectionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEEADDD320A0778200B655A8 /* LaunchScreen.storyboard in Resources */,
+				BEEADDE420A0795800B655A8 /* ItemCollectionViewCell.xib in Resources */,
 				BEEADDD020A0778200B655A8 /* Assets.xcassets in Resources */,
 				BEEADDCE20A0778200B655A8 /* Main.storyboard in Resources */,
 			);
@@ -136,8 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEADDCB20A0778200B655A8 /* ViewController.swift in Sources */,
+				BEEADDDB20A0784700B655A8 /* CollectionViewController.swift in Sources */,
+				BEEADDE320A0795800B655A8 /* ItemCollectionViewCell.swift in Sources */,
 				BEEADDC920A0778200B655A8 /* AppDelegate.swift in Sources */,
+				BEEADDDD20A078A400B655A8 /* CollectionItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

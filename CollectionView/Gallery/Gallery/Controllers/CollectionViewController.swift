@@ -1,6 +1,6 @@
 //
 //  CollectionViewController.swift
-//  ChallengeColectionView
+//  Gallery
 //
 //  Created by Ada 2018 on 07/05/18.
 //  Copyright © 2018 Academy 2018. All rights reserved.
@@ -8,42 +8,42 @@
 
 import UIKit
 
-private let reuseIdentifier = "Item"
+private let reuseIdentifier = "Cell"
+
+
 
 class CollectionViewController: UICollectionViewController {
-
-    var items = [CollectionItem]()
     
+    private var entertainmentItems = [EntertainmentType: [EntertainmentItem]]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        entertainmentItems[.serie] = [EntertainmentItem(type: .serie, name: "Vikings"),
+                                      EntertainmentItem(type: .serie, name: "Stranger Things"),
+                                      EntertainmentItem(type: .serie, name: "La Casa de Papel")]
+        
+        entertainmentItems[.filme] = [EntertainmentItem(type: .filme, name: "John Wick"),
+                                      EntertainmentItem(type: .filme, name: "The Avengers: Infinity War"),
+                                      EntertainmentItem(type: .filme, name: "Nada a perder")]
+        
+        entertainmentItems[.book] = [EntertainmentItem(type: .book, name: "Mitos e lendas Celtas da Irlanda"),
+                                      EntertainmentItem(type: .book, name: "Harry Potter"),
+                                      EntertainmentItem(type: .book, name: "Guardiões da Galaxia")]
+        
 
-        
-        for i in 1...10 {
-           
-            let f = CGFloat(Float(i)/10.0)
-            
-            items.append(CollectionItem(backgroundColor: UIColor(displayP3Red: f, green: f, blue: f, alpha: 1), number: i))
-            
-        }
-        
-        
         // Register cell classes
-        //self.collectionView!.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        self.collectionView?.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil) , forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView?.contentSize = CGSize(width: UIScreen.main.bounds.width, height: CGFloat(10))
-        
-        if let layout = self.collectionView!.collectionViewLayout as? UICollectionViewFlowLayout {
-            
-            layout.scrollDirection = .horizontal
-            layout.minimumLineSpacing = 50.0
-            layout.minimumInteritemSpacing = 150.0
-            print("Horizontal")
-        }
+        self.collectionView!.register(UINib(nibName: "EntertainmentItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+
         // Do any additional setup after loading the view.
+        if let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout{
+            layout.scrollDirection = .vertical
+            layout.minimumInteritemSpacing = 10.0
+            layout.minimumLineSpacing = 10.0
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,32 +65,34 @@ class CollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return self.entertainmentItems.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return self.items.count
+        
+        let key: EntertainmentType = self.entertainmentItems.keys.filter { $0.rawValue == section }[0]
+        
+        guard let items = self.entertainmentItems[key] else { return 0}
+        
+        return items.count
+       
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ItemCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EntertainmentItemCollectionViewCell
     
-        // Configure the cell
-    
-        let item = self.items[indexPath.row]
+        let key = self.entertainmentItems.keys.filter { $0.rawValue == indexPath.section }[0]
         
-        cell.contentView.backgroundColor = item.backgroundColor
-        cell.label.text = "\(item.number)"
+        guard let item = self.entertainmentItems[key]?[indexPath.row] else {
+            return cell
+        }
         
-        cell.frame.size = CGSize(width: CGFloat(100), height: CGFloat(100))
+        cell.lblName.text = item.name
         
         return cell
     }
-    
-    
-    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -121,5 +123,10 @@ class CollectionViewController: UICollectionViewController {
     
     }
     */
+}
 
+extension CollectionViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.size.width, height: CGFloat(40))
+    }
 }

@@ -14,6 +14,10 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //self.layer.borderWidth = 5
+        //self.layer.borderColor = UIColor.black.cgColor
+        //self.contentView.backgroundColor = UIColor.red
         // Initialization code
     }
 

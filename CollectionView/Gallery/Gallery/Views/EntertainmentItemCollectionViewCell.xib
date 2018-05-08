@@ -12,31 +12,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Item" reuseIdentifier="Item" id="gTV-IL-0wX" customClass="ItemCollectionViewCell" customModule="ChallengeColectionView" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="503" height="500"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="EntertainmentItemCollectionViewCell" customModule="Gallery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="380"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="503" height="500"/>
+                <rect key="frame" x="0.0" y="0.0" width="380" height="380"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-MA-U2h">
-                        <rect key="frame" x="230.5" y="249.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td2-dc-Uxr">
+                        <rect key="frame" x="128" y="154" width="125" height="73"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="PpT-MA-U2h" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="EOL-Ow-Nii"/>
-                <constraint firstItem="PpT-MA-U2h" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="QeJ-OU-LkX"/>
+                <constraint firstItem="td2-dc-Uxr" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="9Co-Cs-KSS"/>
+                <constraint firstItem="td2-dc-Uxr" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="Hen-ea-put"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="503" height="500"/>
+            <size key="customSize" width="380" height="384"/>
             <connections>
-                <outlet property="label" destination="PpT-MA-U2h" id="GFb-kC-OeA"/>
+                <outlet property="lblName" destination="td2-dc-Uxr" id="pdf-Xd-Wgl"/>
             </connections>
-            <point key="canvasLocation" x="260.5" y="279"/>
+            <point key="canvasLocation" x="19" y="17"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1964D920A1DB1600AE8669 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1964D820A1DB1600AE8669 /* Converter.swift */; };
+		BE1964DB20A1EC4200AE8669 /* ViewController+DelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1964DA20A1EC4200AE8669 /* ViewController+DelegateFlowLayout.swift */; };
+		BE1964DD20A1EC9B00AE8669 /* ViewController+CollectionVIewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1964DC20A1EC9B00AE8669 /* ViewController+CollectionVIewDataSource.swift */; };
+		BE1964DF20A1ECCF00AE8669 /* ViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1964DE20A1ECCF00AE8669 /* ViewController+ImagePicker.swift */; };
 		BE27894F20A1C026004E0E39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE27894E20A1C026004E0E39 /* AppDelegate.swift */; };
 		BE27895120A1C026004E0E39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE27895020A1C026004E0E39 /* ViewController.swift */; };
 		BE27895420A1C026004E0E39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE27895220A1C026004E0E39 /* Main.storyboard */; };
 		BE27895620A1C026004E0E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE27895520A1C026004E0E39 /* Assets.xcassets */; };
 		BE27895920A1C026004E0E39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE27895720A1C026004E0E39 /* LaunchScreen.storyboard */; };
+		BE27896320A1C250004E0E39 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE27896220A1C250004E0E39 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1964D820A1DB1600AE8669 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		BE1964DA20A1EC4200AE8669 /* ViewController+DelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		BE1964DC20A1EC9B00AE8669 /* ViewController+CollectionVIewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionVIewDataSource.swift"; sourceTree = "<group>"; };
+		BE1964DE20A1ECCF00AE8669 /* ViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		BE27894B20A1C026004E0E39 /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE27894E20A1C026004E0E39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE27895020A1C026004E0E39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,7 @@
 		BE27895520A1C026004E0E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE27895820A1C026004E0E39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE27895A20A1C026004E0E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE27896220A1C250004E0E39 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE1964D720A1DAFE00AE8669 /* Utiles */ = {
+			isa = PBXGroup;
+			children = (
+				BE1964D820A1DB1600AE8669 /* Converter.swift */,
+			);
+			path = Utiles;
+			sourceTree = "<group>";
+		};
 		BE27894220A1C026004E0E39 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +72,35 @@
 		BE27894D20A1C026004E0E39 /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				BE1964D720A1DAFE00AE8669 /* Utiles */,
+				BE27896120A1C22F004E0E39 /* Controllers */,
+				BE27896020A1C212004E0E39 /* Models */,
 				BE27894E20A1C026004E0E39 /* AppDelegate.swift */,
-				BE27895020A1C026004E0E39 /* ViewController.swift */,
 				BE27895220A1C026004E0E39 /* Main.storyboard */,
 				BE27895520A1C026004E0E39 /* Assets.xcassets */,
 				BE27895720A1C026004E0E39 /* LaunchScreen.storyboard */,
 				BE27895A20A1C026004E0E39 /* Info.plist */,
 			);
 			path = Challenge;
+			sourceTree = "<group>";
+		};
+		BE27896020A1C212004E0E39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE27896220A1C250004E0E39 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE27896120A1C22F004E0E39 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE27895020A1C026004E0E39 /* ViewController.swift */,
+				BE1964DA20A1EC4200AE8669 /* ViewController+DelegateFlowLayout.swift */,
+				BE1964DC20A1EC9B00AE8669 /* ViewController+CollectionVIewDataSource.swift */,
+				BE1964DE20A1ECCF00AE8669 /* ViewController+ImagePicker.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE27896320A1C250004E0E39 /* Photo.swift in Sources */,
+				BE1964DB20A1EC4200AE8669 /* ViewController+DelegateFlowLayout.swift in Sources */,
+				BE1964DF20A1ECCF00AE8669 /* ViewController+ImagePicker.swift in Sources */,
 				BE27895120A1C026004E0E39 /* ViewController.swift in Sources */,
+				BE1964D920A1DB1600AE8669 /* Converter.swift in Sources */,
+				BE1964DD20A1EC9B00AE8669 /* ViewController+CollectionVIewDataSource.swift in Sources */,
 				BE27894F20A1C026004E0E39 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

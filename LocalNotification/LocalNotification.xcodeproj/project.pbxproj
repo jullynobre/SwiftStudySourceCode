@@ -14,6 +14,8 @@
 		57D0E343216B7BA100BB5686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0E341216B7BA100BB5686 /* LaunchScreen.storyboard */; };
 		57D0E34E216B7BA100BB5686 /* LocalNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0E34D216B7BA100BB5686 /* LocalNotificationTests.swift */; };
 		57D0E359216B7BA100BB5686 /* LocalNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0E358216B7BA100BB5686 /* LocalNotificationUITests.swift */; };
+		57D0E369216B86BE00BB5686 /* puppy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 57D0E368216B86BE00BB5686 /* puppy.jpg */; };
+		57D0E36B216B888F00BB5686 /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 57D0E36A216B888F00BB5686 /* movie.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		57D0E354216B7BA100BB5686 /* LocalNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D0E358216B7BA100BB5686 /* LocalNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationUITests.swift; sourceTree = "<group>"; };
 		57D0E35A216B7BA100BB5686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57D0E368216B86BE00BB5686 /* puppy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = puppy.jpg; path = ../../../Downloads/puppy.jpg; sourceTree = "<group>"; };
+		57D0E36A216B888F00BB5686 /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = movie.mp4; path = ../../../Downloads/movie.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				57D0E34C216B7BA100BB5686 /* LocalNotificationTests */,
 				57D0E357216B7BA100BB5686 /* LocalNotificationUITests */,
 				57D0E336216B7BA000BB5686 /* Products */,
+				57D0E368216B86BE00BB5686 /* puppy.jpg */,
+				57D0E36A216B888F00BB5686 /* movie.mp4 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,7 +237,9 @@
 			files = (
 				57D0E343216B7BA100BB5686 /* LaunchScreen.storyboard in Resources */,
 				57D0E340216B7BA100BB5686 /* Assets.xcassets in Resources */,
+				57D0E369216B86BE00BB5686 /* puppy.jpg in Resources */,
 				57D0E33E216B7BA000BB5686 /* Main.storyboard in Resources */,
+				57D0E36B216B888F00BB5686 /* movie.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

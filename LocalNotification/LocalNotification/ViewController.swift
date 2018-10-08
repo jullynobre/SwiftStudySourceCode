@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         
         UNUserNotificationCenter.current().delegate = self
         
-        createNotification(title: "Hehe", subtitle: "hehehe", body: "hehehehe")
+        createNotification(title: "Doguinho Fofo", subtitle: "Happy", body: "Foi o Guimbo quem escolheu esse video. <3")
         // Do any additional setup after loading the view, typically from a nib.
     }
 

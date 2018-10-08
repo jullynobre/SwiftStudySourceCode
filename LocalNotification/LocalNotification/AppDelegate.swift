@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { (sucsess, error) in
-            print(error!)
+            if (error != nil) { print(error!) }
         }
         
         return true

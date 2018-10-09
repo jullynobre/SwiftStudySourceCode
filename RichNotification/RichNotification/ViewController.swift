@@ -11,7 +11,6 @@ import UserNotifications
 
 class ViewController: UIViewController {
     let categotyId = "categoryID"
-    let actionID = "actionID"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +23,15 @@ class ViewController: UIViewController {
     }
     
     func setNotificationCategories(){
-        let okAction = UNNotificationAction(identifier: self.actionID,
+        let okAction = UNNotificationAction(identifier: "OK Action",
                                             title: "OK",
                                             options: [])
+        let guimboAction = UNNotificationAction(identifier: "Guimbo Action",
+                                                title: "Manda um oi pro Guimbo",
+                                                options: [])
+        
         let category = UNNotificationCategory(identifier: self.categotyId,
-                                              actions: [okAction],
+                                              actions: [okAction, guimboAction],
                                               intentIdentifiers: [],
                                               options: [.customDismissAction])
         UNUserNotificationCenter.current().setNotificationCategories([category])
@@ -49,6 +52,27 @@ class ViewController: UIViewController {
 extension ViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let request = response.notification.request
+        let requestID = request.identifier
+        
+        switch response.actionIdentifier {
+        case "OK Action":
+            print("Custom OK action triggered in background")
+        case "Guimbo Action":
+            print("Oi, Guimbo")
+        case UNNotificationDefaultActionIdentifier:
+            print("Default action triggered in background")
+        default:
+            print("Unknown action triggered in background, action identifier: \(response.actionIdentifier)")
+        }
+        
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestID])
+        
+        completionHandler()
     }
 }
 

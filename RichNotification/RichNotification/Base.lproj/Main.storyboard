@@ -28,6 +28,9 @@
                         <color key="backgroundColor" red="0.078686033072943404" green="0.14329407654875154" blue="0.2570231541450777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="ZAX-xM-Yo0" id="379-iO-U0L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

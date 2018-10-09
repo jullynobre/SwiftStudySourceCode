@@ -12,6 +12,8 @@ import UserNotifications
 class ViewController: UIViewController {
     let categotyId = "categoryID"
     
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +65,7 @@ extension ViewController: UNUserNotificationCenterDelegate {
         case "OK Action":
             print("Custom OK action triggered in background")
         case "Guimbo Action":
+            self.label.text = "Oi, Guimbo c:"
             print("Oi, Guimbo")
         case UNNotificationDefaultActionIdentifier:
             print("Default action triggered in background")

@@ -17,6 +17,11 @@ class NotificationService: UNNotificationServiceExtension {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
+        let likeAction = UNNotificationAction(identifier: "like", title: "Like", options: [])
+        let saveAction = UNNotificationAction(identifier: "save", title: "Save", options: [])
+        let category = UNNotificationCategory(identifier: "unicorning", actions: [likeAction, saveAction], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        
         guard let bestAttemptContent = bestAttemptContent,
             let apsData = bestAttemptContent.userInfo["aps"] as? [String: Any],
             let attachmentURLAsString = apsData["attachment-url"] as? String,

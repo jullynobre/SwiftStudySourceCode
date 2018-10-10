@@ -13,22 +13,43 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showMapArea_1()
+        self.locationManager.delegate = self
+        
+        startUpdatingLocation()
+        //showMapArea()
     }
     
-    func showMapArea_1(){
+    func startUpdatingLocation() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func showMapArea(){
         let latitude: CLLocationDegrees = -3.743993
         let longitude: CLLocationDegrees = -38.535674
         
-        let centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let region = MKCoordinateRegion(center: centerCoordinate, span: span)
-        
-        mapView.setRegion(region, animated: true)
+        self.setLocationInMap(center:  CLLocationCoordinate2DMake(latitude, longitude))
     }
-
+    
+    func setLocationInMap( center: CLLocationCoordinate2D ) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+        let region = MKCoordinateRegion(center: center, span: span)
+        
+        self.mapView.setRegion(region, animated: true)
+    }
 }
 
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let currentLocation = locations.last!
+        
+        self.setLocationInMap(center: currentLocation.coordinate)
+    }
+}

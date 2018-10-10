@@ -14,6 +14,7 @@
 		571BDC8D216E17F40053FD9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571BDC8B216E17F40053FD9E /* LaunchScreen.storyboard */; };
 		571BDC98216E17F40053FD9E /* MapSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BDC97216E17F40053FD9E /* MapSampleTests.swift */; };
 		571BDCA3216E17F40053FD9E /* MapSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BDCA2216E17F40053FD9E /* MapSampleUITests.swift */; };
+		571BDCB2216E1D8E0053FD9E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571BDCB1216E1D8E0053FD9E /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		571BDC9E216E17F40053FD9E /* MapSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		571BDCA2216E17F40053FD9E /* MapSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSampleUITests.swift; sourceTree = "<group>"; };
 		571BDCA4216E17F40053FD9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		571BDCB1216E1D8E0053FD9E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				571BDCB2216E1D8E0053FD9E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				571BDC96216E17F40053FD9E /* MapSampleTests */,
 				571BDCA1216E17F40053FD9E /* MapSampleUITests */,
 				571BDC80216E17F30053FD9E /* Products */,
+				571BDCB0216E1D8E0053FD9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				571BDCA4216E17F40053FD9E /* Info.plist */,
 			);
 			path = MapSampleUITests;
+			sourceTree = "<group>";
+		};
+		571BDCB0216E1D8E0053FD9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				571BDCB1216E1D8E0053FD9E /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

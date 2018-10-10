@@ -21,7 +21,8 @@ class ViewController: UIViewController {
         self.locationManager.delegate = self
         
         startUpdatingLocation()
-        //showMapArea()
+        
+        self.mapView.showsUserLocation = true
     }
     
     func startUpdatingLocation() {

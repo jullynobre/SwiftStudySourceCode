@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         locationManager.startUpdatingLocation()
     }
     
-    func showMapArea(){
+    func showMapArea() {
         let latitude: CLLocationDegrees = -3.743993
         let longitude: CLLocationDegrees = -38.535674
         
@@ -43,6 +43,15 @@ class ViewController: UIViewController {
         let region = MKCoordinateRegion(center: center, span: span)
         
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    func markPointInMap(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
+        let pointAnotation = MKPointAnnotation()
+        pointAnotation.coordinate = coordinate
+        pointAnotation.title = title
+        pointAnotation.subtitle = subtitle
+        
+        self.mapView.addAnnotation(pointAnotation)
     }
 }
 

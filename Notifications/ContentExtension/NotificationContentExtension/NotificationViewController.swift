@@ -15,10 +15,14 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         showMapArea()
+        
+        self.mapView.showsUserLocation = true
     }
     
     func showMapArea() {
@@ -27,7 +31,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         
         self.setLocationInMap(center:  CLLocationCoordinate2DMake(latitude, longitude))
     }
-    
+
     func setLocationInMap( center: CLLocationCoordinate2D ) {
         let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
         let region = MKCoordinateRegion(center: center, span: span)

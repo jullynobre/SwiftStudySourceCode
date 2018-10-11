@@ -9,18 +9,33 @@
 import UIKit
 import UserNotifications
 import UserNotificationsUI
+import MapKit
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
-
-    @IBOutlet var label: UILabel?
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any required interface initialization here.
+        
+        showMapArea()
+    }
+    
+    func showMapArea() {
+        let latitude: CLLocationDegrees = -3.743993
+        let longitude: CLLocationDegrees = -38.535674
+        
+        self.setLocationInMap(center:  CLLocationCoordinate2DMake(latitude, longitude))
+    }
+    
+    func setLocationInMap( center: CLLocationCoordinate2D ) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+        let region = MKCoordinateRegion(center: center, span: span)
+        
+        self.mapView.setRegion(region, animated: true)
     }
     
     func didReceive(_ notification: UNNotification) {
-        self.label?.text = notification.request.content.body
     }
 
 }

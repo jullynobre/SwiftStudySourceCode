@@ -17,35 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Su-nZ-cDe">
-                                <rect key="frame" x="16" y="1" width="217" height="35"/>
-                                <state key="normal" title="Increase value"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5S-iK-i79">
-                                <rect key="frame" x="241" y="1" width="63" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="5nQ-oI-11P"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-ce-w2q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.45882353186607361" green="0.74901962280273438" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5Su-nZ-cDe" firstAttribute="top" secondItem="a5S-iK-i79" secondAttribute="top" id="EKb-lu-wTb"/>
-                            <constraint firstItem="a5S-iK-i79" firstAttribute="leading" secondItem="5Su-nZ-cDe" secondAttribute="trailing" constant="8" symbolic="YES" id="Q0I-lZ-OkV"/>
-                            <constraint firstItem="5Su-nZ-cDe" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="XTk-Vf-tNo"/>
-                            <constraint firstItem="5Su-nZ-cDe" firstAttribute="bottom" secondItem="2BE-c3-nQJ" secondAttribute="bottom" id="ZJM-2D-7Eu"/>
-                            <constraint firstItem="5Su-nZ-cDe" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="ggw-Oh-S5T"/>
-                            <constraint firstItem="a5S-iK-i79" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="pIr-uC-Opl"/>
-                            <constraint firstItem="5Su-nZ-cDe" firstAttribute="centerY" secondItem="a5S-iK-i79" secondAttribute="centerY" id="viR-04-DGG"/>
+                            <constraint firstItem="c2d-ce-w2q" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="Aq1-kU-xsP"/>
+                            <constraint firstItem="c2d-ce-w2q" firstAttribute="centerY" secondItem="2BE-c3-nQJ" secondAttribute="centerY" id="aNa-CA-grf"/>
+                            <constraint firstItem="c2d-ce-w2q" firstAttribute="centerX" secondItem="2BE-c3-nQJ" secondAttribute="centerX" id="qit-Dk-Ftt"/>
+                            <constraint firstItem="c2d-ce-w2q" firstAttribute="height" secondItem="S3S-Oj-5AN" secondAttribute="height" id="vdo-Lz-i9W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="36"/>
+                    <connections>
+                        <outlet property="mapView" destination="c2d-ce-w2q" id="Vdc-pM-7Kb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         self.mapView.setRegion(region, animated: true)
     }
     
-    func markPointInMap(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
+    func markPointInMap( coordinate: CLLocationCoordinate2D, title: String, subtitle: String ) {
         let pointAnotation = MKPointAnnotation()
         pointAnotation.coordinate = coordinate
         pointAnotation.title = title
